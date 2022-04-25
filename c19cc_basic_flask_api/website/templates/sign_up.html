@@ -1,0 +1,102 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
+content %}
+{#<!--send post request to the backend-->#}
+<form method="POST">
+  <h3 align="center">Sign Up</h3>
+  <div class="form-group">
+    {#<!--define a name and id (id is optional but you should use it so your for label links with your field)
+     name is what the attribute will be called when you pass info to your backend-->#}
+    <label for="email">Email Address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Enter email"
+    />
+  </div>
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="firstName"
+      name="firstName"
+      placeholder="Enter first name"
+    />
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="lastName"
+      name="lastName"
+      placeholder="Enter last name"
+    />
+  </div>
+  <div class="form-group">
+    <label for="address">Address</label>
+    <input
+      type="text"
+      class="form-control"
+      id="address"
+      name="address"
+      placeholder="Enter street name"
+    />
+  </div>
+  <div class="form-group">
+    <label for="city">City</label>
+    <input
+      type="text"
+      class="form-control"
+      id="city"
+      name="city"
+      placeholder="Enter city"
+    />
+  </div>
+  <div class="form-group">
+    <label for="state">State</label>
+    <input
+      type="text"
+      class="form-control"
+      id="state"
+      name="state"
+      placeholder="Enter State"
+    />
+  </div>
+  <div class="form-group">
+    <label for="zipcode">Zipcode</label>
+    <input
+      type="text"
+      class="form-control"
+      id="zipcode"
+      name="zipcode"
+      placeholder="Enter zipcode"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password1">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password1"
+      name="password1"
+      placeholder="Enter password"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password2">Password (Confirm)</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password2"
+      name="password2"
+      placeholder="Confirm password"
+    />
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
+

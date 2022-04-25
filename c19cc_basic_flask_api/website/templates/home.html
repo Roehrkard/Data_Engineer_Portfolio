@@ -1,0 +1,23 @@
+{#<!--home.html overwrites blocked portion in base.html-->#}
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<h1 align="center">Covid19 Symptoms</h1>
+<ul class="list-group list-group-flush" id="symptom">
+  {% for symptoms in user.symptom %}
+  <li class="list-group-item">
+    {{ symptoms.data }}
+    {#<!--onClick calls index.js function-->#}
+    <button type="button" class="close" onClick="deleteSymptoms({{ symptoms.id }})">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </li>
+  {% endfor %}
+</ul>
+<form method="POST">
+  <textarea name="symptoms" id="symptoms" class="form-control"></textarea>
+  <br />
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Add Symptom</button>
+  </div>
+</form>
+{% endblock %}
