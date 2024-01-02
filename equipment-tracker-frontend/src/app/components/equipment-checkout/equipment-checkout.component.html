@@ -1,0 +1,35 @@
+<!-- equipment-checkout.component.html -->
+<div>
+  <h2>Equipment Checkout</h2>
+
+  <!-- Alert Message -->
+  <div *ngIf="alertMessage" class="alert" [ngClass]="{'alert-success': alertType === 'success', 'alert-danger': alertType === 'error'}">
+    {{ alertMessage }}
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Quantity Available</th>
+        <th>Select Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let equipment of equipments">
+        <td>{{ equipment.name }}</td>
+        <td>{{ equipment.description }}</td>
+        <td>{{ equipment.status }}</td>
+        <td>{{ equipment.qty }}</td>
+        <td> 
+          <select [(ngModel)]="equipment.selectedQty" (ngModelChange)="validateCheckout()">
+            <option *ngFor="let n of [].constructor(equipment.qty + 1); let i = index" [value]="i">{{ i }}</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="checkout()" [disabled]="!isCheckoutValid">Checkout</button>
+</div>

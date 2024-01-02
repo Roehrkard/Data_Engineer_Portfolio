@@ -1,0 +1,33 @@
+<!-- equipment-transaction-history.component.html -->
+<div class="equipment-transaction-history">
+    <h2>Equipment Transaction History</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Transaction ID</th>
+          <th>Date</th>
+          <th>User ID</th>
+          <th>Username</th>
+          <th>Equipment ID</th>
+          <th>Equipment Name</th>
+          <th>Status</th>
+          <th>Quantity</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactions">
+          <td>{{ transaction.transactionId }}</td>
+          <td>{{ transaction.transactionDate | date }}</td>
+          <td>{{ transaction.userId }}</td>
+          <td>{{ transaction.username }}</td>
+          <td>{{ transaction.equipmentId }}</td>
+          <td>{{ transaction.equipmentName }}</td>
+          <td>{{ transaction.status }}</td>
+          <td>{{ transaction.quantity }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

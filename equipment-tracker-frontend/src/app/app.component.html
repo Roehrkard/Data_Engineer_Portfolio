@@ -1,0 +1,18 @@
+<!-- app.component.html -->
+
+<div class="container">
+  <!-- Navigation Menu -->
+  <nav class="horizontal-menu">
+    <ul>
+      <li><a routerLink="/equipment-checkout">Equipment Checkout</a></li>
+      <li><a routerLink="/checked-out-equipment">Checked Out Equipment</a></li>
+      <li><a routerLink="/equipment-transaction-history">Transaction History</a></li>
+      <!-- Conditional Rendering for Login/Logout -->
+      <li *ngIf="isLoggedIn(); else loginLink"><a href="#" (click)="logout()">Logout</a></li>
+      <ng-template #loginLink><li><a routerLink="/login">Login</a></li></ng-template>
+    </ul>
+  </nav>
+
+  <!-- Router Outlet for Dynamic Content -->
+  <router-outlet></router-outlet>
+</div>
